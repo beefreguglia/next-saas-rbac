@@ -3,17 +3,15 @@
 /**@type {PrettierConfig} */
 const config = {
   plugins: ['prettier-plugin-tailwindcss'],
-  tabWidth: 2,
+  tabWidth: 4,
   useTabs: false,
-  semi: true,
-  singleQuote: true,
+  singleQuote: false,
   quoteProps: 'as-needed',
-  jsxSingleQuote: false,
-  trailingComma: 'es5',
+  trailingComma: "all",
   bracketSpacing: true,
   arrowParens: 'always',
   endOfLine: 'auto',
-  bracketSameLine: false
+  bracketSameLine: false,
 }
 
 export default config
