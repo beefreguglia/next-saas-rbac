@@ -1,0 +1,6 @@
+{
+  "extends": "@beef-saas/ts-config/node.json",
+  "include": [
+    "src/**/*"
+  ]
+}
