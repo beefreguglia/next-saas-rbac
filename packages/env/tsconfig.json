@@ -1,0 +1,6 @@
+{
+  "extends": "@beef-saas/ts-config/library.json",
+  "include": [
+    "index.ts"
+  ]
+}

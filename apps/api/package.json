@@ -2,10 +2,14 @@
   "name": "@beef-saas/api",
   "version": "1.0.0",
   "scripts": {
-    "dev": "tsx watch src/http/server.ts"
+    "env:load": "dotenv -e ../../.env --",
+    "db:migrate": "pnpm env:load prisma migrate dev",
+    "db:studio": "pnpm env:load prisma studio",
+    "dev": "pnpm env:load tsx watch src/http/server.ts"
   },
   "dependencies": {
     "@beef-saas/auth": "workspace:*",
+    "@beef-saas/env": "workspace:*",
     "@fastify/cors": "^9.0.1",
     "@fastify/jwt": "^8.0.0",
     "@fastify/swagger": "^8.14.0",
@@ -24,6 +28,7 @@
     "@faker-js/faker": "^8.4.1",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20.12.7",
+    "dotenv-cli": "^7.4.1",
     "prisma": "^5.13.0",
     "tsx": "^4.7.2"
   },
