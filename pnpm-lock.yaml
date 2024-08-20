@@ -39,7 +39,19 @@ importers:
         specifier: ^0.6.6
         version: 0.6.6(prettier@3.2.5)
 
-  config/typescript-config: {}
+  config/ts-config: {}
+
+  packages/auth:
+    devDependencies:
+      '@saas/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@saas/prettier':
+        specifier: workspace:*
+        version: link:../../config/prettier
+      '@saas/ts-config':
+        specifier: workspace:*
+        version: link:../../config/ts-config
 
 packages:
 

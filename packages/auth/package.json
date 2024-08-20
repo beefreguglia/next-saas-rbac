@@ -1,0 +1,16 @@
+{
+  "name": "@saas/auth",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.ts",
+  "types": "index.ts",
+  "devDependencies": {
+    "@saas/prettier": "workspace:*",
+    "@saas/eslint-config": "workspace:*",
+    "@saas/ts-config": "workspace:*"
+  },
+  "prettier": "@saas/prettier",
+  "eslintConfig": {
+    "extends": ["@saas/eslint-config/library"]
+  }
+}
