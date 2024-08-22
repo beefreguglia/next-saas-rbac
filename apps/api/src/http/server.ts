@@ -13,6 +13,7 @@ const app = fastify().withTypeProvider<ZodTypeProvider>()
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
 
+// CORS
 app.register(fastifyCors)
 
 // Auth
