@@ -13,6 +13,7 @@ export async function authenticateWithGithub(app: FastifyInstance) {
       schema: {
         tags: ['Auth'],
         summary: 'Authenticate with Github',
+        security: [{ bearerAuth: [] }],
         body: z.object({
           code: z.string(),
         }),
