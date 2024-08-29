@@ -38,7 +38,7 @@
 
 ### Members
 
-- [ ] It should be able to get organization members;
+- [x] It should be able to get organization members;
 - [ ] It should be able to update a member role;
 
 ### Projects
