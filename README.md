@@ -36,6 +36,7 @@
 - [x] It should be able to get invite details;
 - [x] It should be able to get organization invites;
 - [x] It should be able to accept an invite;
+- [x] It should be able to reject a pending invite;
 - [ ] It should be able to revoke a pending invite;
 
 ### Members
