@@ -2,8 +2,11 @@ import { defineAbilityFor, Roles, userSchema } from '@saas/auth'
 
 export function getUserPermissions(userId: string, role: Roles) {
   const authUser = userSchema.parse({
-    userId,
+    id: userId,
     role,
   })
-  return defineAbilityFor(authUser)
+
+  const ability = defineAbilityFor(authUser)
+
+  return ability
 }
