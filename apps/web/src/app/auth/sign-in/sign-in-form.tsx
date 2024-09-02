@@ -3,6 +3,7 @@
 import { AlertTriangle, Loader2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import githubIcon from '@/assets/github-icon.svg'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
@@ -14,9 +15,15 @@ import { useFormState } from '@/hooks/use-form-state'
 
 import { signInWithEmailAndPassword } from './actions'
 
+function onSignInSuccess() {
+  const router = useRouter()
+  router.push('/')
+}
+
 export function SignInForm() {
   const [{ success, message, errors }, handleSubmit, isPending] = useFormState(
     signInWithEmailAndPassword,
+    onSignInSuccess,
   )
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
