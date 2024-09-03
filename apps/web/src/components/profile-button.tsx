@@ -30,14 +30,15 @@ export async function ProfileButton() {
           <span className="text-sm font-medium">{user.name}</span>
           <span className="text-xs text-zinc-400">{user.email}</span>
         </div>
-        <Avatar>
+        <Avatar className="size-8">
           {user.avatarUrl && <AvatarImage src={user.avatarUrl} />}
-          {user.name && (
+          {user.name ? (
             <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
+          ) : (
+            <AvatarFallback>
+              <User />
+            </AvatarFallback>
           )}
-          <AvatarFallback>
-            <User />
-          </AvatarFallback>
         </Avatar>
         <ChevronDown className="size-4 text-muted-foreground" />
       </DropdownMenuTrigger>
