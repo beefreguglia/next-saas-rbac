@@ -1,21 +1,17 @@
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet'
+import { InterceptedSheetContent } from '@/components/intercepted-sheet-content'
+import { Sheet, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 
 import { OrganizationForm } from '../../create-organization/organization-form'
 
 export default function CreateOrganization() {
   return (
     <Sheet defaultOpen>
-      <SheetContent>
+      <InterceptedSheetContent>
         <SheetHeader>
           <SheetTitle>Create Organization</SheetTitle>
         </SheetHeader>
         <OrganizationForm />
-      </SheetContent>
+      </InterceptedSheetContent>
     </Sheet>
   )
 }
