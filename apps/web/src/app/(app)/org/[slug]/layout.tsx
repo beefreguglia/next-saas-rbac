@@ -10,7 +10,7 @@ export default function OrgLayout({
         <Header />
         <Tabs />
       </div>
-      <main className="m-w-[1200px] mx-auto w-full py-4">{children}</main>
+      <main className="mx-auto w-full max-w-[1200px] py-4">{children}</main>
     </div>
   )
 }
