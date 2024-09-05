@@ -20,7 +20,7 @@ export async function getCurrentMembership() {
     return null
   }
 
-  const { membership } = await getMembership(org)
+  const { membership } = await getMembership({ org })
 
   return membership
 }
