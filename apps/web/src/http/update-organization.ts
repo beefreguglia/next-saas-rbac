@@ -1,27 +1,29 @@
 import { api } from './api-client'
 
-interface CreateOrganizationRequest {
+interface UpdateOrganizationRequest {
+  org: string
   name: string
   domain: string | null
   shouldAttachUsersByDomain: boolean
 }
 
-type CreateOrganizationResponse = void
+type UpdateOrganizationResponse = void
 
-export async function createOrganization({
+export async function updateOrganization({
+  org,
   domain,
   name,
   shouldAttachUsersByDomain,
-}: CreateOrganizationRequest) {
+}: UpdateOrganizationRequest) {
   const result = await api
-    .post('organizations', {
+    .put(`organizations/${org}`, {
       json: {
         domain,
         name,
         shouldAttachUsersByDomain,
       },
     })
-    .json<CreateOrganizationResponse>()
+    .json<UpdateOrganizationResponse>()
 
   return result
 }
