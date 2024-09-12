@@ -22,7 +22,7 @@ export async function getMembers({ org }: GetMembersRequest) {
   const result = await api
     .get(`organizations/${org}/members`, {
       next: {
-        tags: ['members'],
+        tags: [`${org}/members`],
       },
     })
     .json<GetMembersResponse>()
