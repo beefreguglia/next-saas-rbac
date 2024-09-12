@@ -6,10 +6,6 @@ interface CreateProjectRequest {
   org: string
 }
 
-interface CreateProjectResponse {
-  token: string
-}
-
 export async function createProject({
   description,
   name,
@@ -22,7 +18,7 @@ export async function createProject({
         name,
       },
     })
-    .json<CreateProjectResponse>()
+    .json()
 
   return result
 }
