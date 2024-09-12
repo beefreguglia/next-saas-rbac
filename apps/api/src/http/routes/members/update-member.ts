@@ -8,16 +8,16 @@ import { auth } from '@/http/middlewares/auth'
 import { prisma } from '@/lib/prisma'
 import { getUserPermissions } from '@/utils/get-user-permissions'
 
-export async function updateMembers(app: FastifyInstance) {
+export async function updateMember(app: FastifyInstance) {
   app
     .withTypeProvider<ZodTypeProvider>()
     .register(auth)
-    .patch(
+    .put(
       '/organizations/:slug/members/:memberId',
       {
         schema: {
           tags: ['Members'],
-          summary: 'Update a member role',
+          summary: 'Update a member',
           security: [{ bearerAuth: [] }],
           params: z.object({
             slug: z.string(),
@@ -44,6 +44,7 @@ export async function updateMembers(app: FastifyInstance) {
             `You're not allowed to update this member.`,
           )
         }
+
         const { role } = request.body
 
         await prisma.member.update({
